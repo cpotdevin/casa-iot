@@ -4,6 +4,12 @@
       <h1>Casa IoT</h1>
     </header>
 
+    {{> loginButtons}}
+
+    <div>
+      Token: {{userApiToken}}
+    </div>
+
     <ul>
       {{#each variables}}
         {{> variable}}
