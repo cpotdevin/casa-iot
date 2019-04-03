@@ -69,6 +69,13 @@ Api.addRoute('variables', {
     return checkUser(this, function(httpRequest, { user }) {
       const name = httpRequest.bodyParams.name;
       const createdAt = moment().unix();
+      const variable = Variables.findOne({ name: name, owner: user._id });
+      if (variable) {
+        return {
+          statusCode: 409,
+          body: { status: 'fail', message: 'Variable name already used' }
+        };
+      }
       Variables.insert({ name: name, owner: user._id, createdAt: createdAt, lastValue: null });
       return { statusCode: 200 };
     });
