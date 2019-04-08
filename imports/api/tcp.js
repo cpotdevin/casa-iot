@@ -76,12 +76,20 @@ const managePOST = Meteor.bindEnvironment(function(statements) {
     if (variable) {
       Variables.update(variable._id, { $set: { lastValue: value } });
     } else {
-      const createdAt = moment().unix();
-      variable = {};
-      variable._id = Variables.insert({ name: name, owner: user._id, createdAt: createdAt, lastValue: value });
+      const variable = {
+        name: name,
+        owner: user._id,
+        createdAt: moment().unix(),
+        lastValue: value
+      };
+      variable._id = Variables.insert(variable);
     }
-    const timestamp = moment().unix();
-    Values.insert({ variableId: variable._id, value: value, timestamp: timestamp });
+    const newValue = {
+      variableId: variable._id,
+      value: value,
+      timestamp: moment().unix()
+    };
+    Values.insert(newValue);
   }
   return 'OK';
 });
