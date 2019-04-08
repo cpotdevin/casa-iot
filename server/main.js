@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import '../imports/api/variables';
 import '../imports/api/values';
 import '../imports/api/rest';
+import '../imports/api/tcp';
 import '../imports/startup/accounts-config';
 
 Meteor.publish('users', function() {
