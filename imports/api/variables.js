@@ -52,9 +52,8 @@ Meteor.methods({
   'variables.remove'(variableId) {
     check(variableId, String);
 
-    const testVar = Variables.find({ _id: variableId, owner: this.userId }).fetch();
-    console.log(testVar);
-    if (testVar.length === 0) {
+    const variable = Variables.find({ _id: variableId, owner: this.userId }).fetch();
+    if (variable.length === 0) {
       throw new Meteor.Error('variable-does-not-exist');
     }
 
