@@ -1,15 +1,28 @@
 <body>
   <div class="container">
-    <header>
-      <h1>Casa IoT</h1>
-    </header>
+    <nav>
+      <h1>IoT House</h1>
 
-    {{> loginButtons}}
+      <ul>
+        <li>Dashboard</li>
+        <li>Variables</li>
+        <li>{{> loginButtons}}</li>
+      </ul>
+    </nav>
 
-    <div>
-      Token: {{userApiToken}}
-    </div>
+    {{#if currentUser}}
+      <div>
+        Token: {{userApiToken}}
+      </div>
+    {{/if}}
 
+    <form class="new-variable">
+      <label>Variable name:</label>
+      <input type="text" name="name" placeholder="myNewVariable" autocomplete="off" />
+      <label>Variable value:</label>
+      <input type="number" name="value" placeholder="lastValue" autocomplete="off" />
+      <input type="submit" value="Create" />
+    </form>
     <ul>
       {{#each variables}}
         {{> variable}}
