@@ -1,11 +1,9 @@
 <template name="variable">
   <h3>{{name}}:</h3>
-  <ul>
-    <li>
-      ID: {{_id}}
-    </li>
-    <li>
-      Last value: {{lastValue}}
-    </li>
-  </ul>
+    <h4>Last value: {{lastValue}}</h4>
+    <form class='update-variable'>
+      <label>Set value: </label>
+      <input type="number" name="value" placeholder="Value" />
+      <input type="submit" value="Set" />
+    </form>
 </template>

@@ -32,5 +32,8 @@ Template.body.events({
     }
 
     Meteor.call('variables.insert', variable);
+    
+    event.target.name.value = '';
+    event.target.value.value = '';
   }
 });
