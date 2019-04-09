@@ -22,8 +22,11 @@ Meteor.methods({
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
-    const testVar = Variables.find({ name: variable.name, owner: this.userId }).fetch();
-    if (0 < testVar.length) {
+    if (variable.name === '') {
+      throw new Meteor.Error('variable-must-have-non-empty-name');
+    }
+    const searchedVariable = Variables.find({ name: variable.name, owner: this.userId }).fetch();
+    if (0 < searchedVariable.length) {
       throw new Meteor.Error('variable-already-exists');
     }
 

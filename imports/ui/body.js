@@ -27,9 +27,6 @@ Template.body.events({
     const variable = {
       name: event.target.name.value
     };
-    if (variable.name === '') {
-      throw new Meteor.Error('variable-must-have-non-empty-name');
-    }
     if (event.target.value.value !== '') {
       variable.lastValue = Number(event.target.value.value);
     }
