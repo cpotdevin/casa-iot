@@ -5,7 +5,7 @@ import { moment } from 'meteor/momentjs:moment';
 import { Variables } from './variables';
 import { Values } from './values';
 
-const HOST = '127.0.0.1';
+const HOST = '0.0.0.0';
 const PORT = 9012;
 
 const handleTCPConnection = Meteor.bindEnvironment(function(socket) {
