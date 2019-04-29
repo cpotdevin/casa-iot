@@ -76,7 +76,7 @@ const managePOST = Meteor.bindEnvironment(function(statements) {
     if (variable) {
       Variables.update(variable._id, { $set: { lastValue: value } });
     } else {
-      const variable = {
+      variable = {
         name: name,
         owner: user._id,
         createdAt: moment().unix(),
