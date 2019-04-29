@@ -37,6 +37,10 @@ const handleTCPConnection = Meteor.bindEnvironment(function(socket) {
     socket.end();
   }));
 
+  socket.on('error', function(error) {
+    console.log('Socket got problems: ', error.message);
+  });
+
   socket.on('end', socket.end);
 });
 
