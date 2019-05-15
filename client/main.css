@@ -9,3 +9,27 @@ html {
 body {
   margin: 0;
 }
+
+.variables {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 20px;
+}
+
+.variable {
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.variable h3 {
+  font-size: 28px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.variable form {
+  margin: 10px auto;
+  text-align: center;
+}
