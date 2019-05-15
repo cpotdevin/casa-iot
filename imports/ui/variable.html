@@ -1,5 +1,6 @@
 <template name="variable">
-  <h3>{{name}}:</h3>
+  <div class='variable'>
+    <h3>{{name}}</h3>
     <h4>Last value: {{lastValue}}</h4>
     <form class='update-variable'>
       <label>Set value: </label>
@@ -7,4 +8,5 @@
       <input type="submit" value="Set" />
     </form>
     <button class="delete">Delete</button>
+  </div>
 </template>
