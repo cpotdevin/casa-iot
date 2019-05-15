@@ -20,7 +20,14 @@ body {
 .variable {
   border: 1px solid grey;
   border-radius: 5px;
+  box-shadow: 0 5px 6px #44444466;
   padding: 20px;
+  margin: 2px;
+}
+
+.variable:hover {
+  margin: 0;
+  box-shadow: 0 5px 10px #44444444;
 }
 
 .variable h3 {
