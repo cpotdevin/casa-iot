@@ -86,6 +86,19 @@ nav h1 {
   margin: 10px auto;
 }
 
+.variable .variable-value-container {
+  display: flex;
+  justify-content: center;
+}
+
+.variable .variable-value-container .variable-value {
+  background-color: #FFA21B;
+  border-radius: 2px;
+  font-size: 20px;
+  padding: 12px;
+  text-align: center;
+}
+
 .variable form {
   margin: 10px auto;
   text-align: center;

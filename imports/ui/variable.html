@@ -1,13 +1,25 @@
 <template name="variable">
   <div class='variable'>
     <h3>{{title}}</h3>
-    <ul>
-      <li>Name: {{name}}</li>
-      <li>Last value: {{lastValue}}</li>
-    </ul>
-    <form class='update-variable'>
-      <label>Set value: </label>
-      <input type="number" name="value" placeholder="Value" step="any" required="required" autocomplete="off" />
+    <div class="variable-value-container">
+      <div class="variable-value">
+        {{lastValue}}
+      </div>
+    </div>
+    {{#if currentUser}}
+      <ul>
+        <li>Name: {{name}}</li>
+        <li>Last value: {{lastValue}}</li>
+      </ul>
+      <form class='update-variable-title'>
+        <label>Title: </label>
+        <input type="text" name="title" placeholder="New title" required="required" autocomplete="off" />
+        <input type="submit" value="Set" />
+      </form>
+    {{/if}}
+    <form class='update-variable-value'>
+      <label>Value: </label>
+      <input type="number" name="value" placeholder="New value" step="any" required="required" autocomplete="off" />
       <input type="submit" value="Set" />
     </form>
     <button class="delete">Delete</button>

@@ -11,9 +11,14 @@ Template.variable.helpers({
 });
 
 Template.variable.events({
-  'submit .update-variable'(event) {
+  'submit .update-variable-title'(event) {
     event.preventDefault();
-    Meteor.call('variables.update', this._id, Number(event.target.value.value));
+    Meteor.call('variables.update-title', this._id, event.target.title.value);
+    event.target.title.value = '';
+  },
+  'submit .update-variable-value'(event) {
+    event.preventDefault();
+    Meteor.call('variables.update-value', this._id, Number(event.target.value.value));
     event.target.value.value = '';
   },
   'click .delete'(event) {

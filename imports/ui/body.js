@@ -23,7 +23,6 @@ Template.body.helpers({
 Template.body.events({
   'submit .new-variable-form'(event) {
     event.preventDefault();
-    console.log(event.target.title.value);
 
     const variable = {
       title: event.target.title.value,
