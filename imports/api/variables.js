@@ -37,6 +37,7 @@ Meteor.methods({
 
     variable.owner = Meteor.userId();
     variable.createdAt = moment().unix();
+    variable.editable = false;
 
     Variables.insert(variable);
   },
@@ -66,6 +67,13 @@ Meteor.methods({
       timestamp: moment().unix()
     };
     Values.insert(newValue);
+  },
+  'variables.set-editable'(variableId) {
+    check(variableId, String);
+
+    const variable = Variables.find({ _id: variableId, owner: this.userId }).fetch()[0];
+
+    Variables.update(variableId, {$set: { editable: !variable.editable } });
   },
   'variables.remove'(variableId) {
     check(variableId, String);

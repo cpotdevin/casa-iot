@@ -21,6 +21,10 @@ Template.variable.events({
     Meteor.call('variables.update-value', this._id, Number(event.target.value.value));
     event.target.value.value = '';
   },
+  'click .toggle-editable'(event) {
+    event.preventDefault();
+    Meteor.call('variables.set-editable', this._id);
+  },
   'click .delete'(event) {
     event.preventDefault();
     Meteor.call('variables.remove', this._id);

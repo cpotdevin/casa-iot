@@ -17,12 +17,21 @@
         <input type="submit" value="Set" />
       </form>
     {{/if}}
-    <form class='update-variable-value'>
-      <label>Value: </label>
-      <input type="number" name="value" placeholder="New value" step="any" required="required" autocomplete="off" />
-      <input type="submit" value="Set" />
-    </form>
+    {{#if editable}}
+      <form class='update-variable-value'>
+        <label>Value: </label>
+        <input type="number" name="value" placeholder="New value" step="any" required="required" autocomplete="off" />
+        <input type="submit" value="Set" />
+      </form>
+    {{/if}}
     {{#if currentUser}}
+      <button class="toggle-editable">
+        {{#if editable}}
+          Make uneditable
+        {{else}}
+          Make editable
+        {{/if}}
+      </button>
       <button class="delete">Delete</button>
     {{/if}}
   </div>
