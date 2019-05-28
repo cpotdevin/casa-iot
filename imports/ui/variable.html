@@ -22,6 +22,8 @@
       <input type="number" name="value" placeholder="New value" step="any" required="required" autocomplete="off" />
       <input type="submit" value="Set" />
     </form>
-    <button class="delete">Delete</button>
+    {{#if currentUser}}
+      <button class="delete">Delete</button>
+    {{/if}}
   </div>
 </template>
