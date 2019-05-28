@@ -15,8 +15,9 @@ if (Meteor.isServer) {
 Meteor.methods({
   'variables.insert'(variable) {
     check(variable, {
+      title: String,
       name: String,
-      lastValue: Match.Maybe(Number)
+      lastValue: Number
     });
 
     if (!this.userId) {

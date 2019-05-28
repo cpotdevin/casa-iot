@@ -21,4 +21,3 @@ nimble:restivus
 accounts-ui
 accounts-password
 momentjs:moment
-kadira:flow-router

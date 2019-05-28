@@ -2,27 +2,27 @@
   <div class="container">
     <nav>
       <h1>Casa IoT</h1>
-
-      <ul>
-        <li>Dashboard</li>
-        <li>Variables</li>
-        <li>{{> loginButtons}}</li>
-      </ul>
+      {{> loginButtons}}
     </nav>
 
     {{#if currentUser}}
-      <div>
-        Token: {{userApiToken}}
+      <div id="user-token">
+        <p>User token: {{userApiToken}}</p>
       </div>
-      <form class="new-variable">
-        <label>Variable name: </label>
-        <input type="text" name="name" placeholder="myNewVariable" autocomplete="off" />
-        <br />
-        <label>Variable value: </label>
-        <input type="number" name="value" placeholder="lastValue" autocomplete="off" />
-        <br />
-        <input type="submit" value="Create" />
-      </form>
+      <div class="center-content">
+        <div class="create-new-variable">
+          <h3>Create a new variable: </h3>
+          <form class="new-variable-form">
+            <label for="variable-title">Variable title: </label>
+            <input id="variable-title" type="text" name="title" placeholder="My New Variable" required="required" autocomplete="off" />
+            <br />
+            <label for="variable-name" >Variable name: </label>
+            <input id="variable-name" type="text" name="name" placeholder="myNewVariable" required="required" autocomplete="off" />
+            <br />
+            <input type="submit" value="Create" />
+          </form>
+        </div>
+      </div>
     {{/if}}
 
     <div class='variables'>

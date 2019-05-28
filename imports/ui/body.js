@@ -21,19 +21,19 @@ Template.body.helpers({
 });
 
 Template.body.events({
-  'submit .new-variable'(event) {
+  'submit .new-variable-form'(event) {
     event.preventDefault();
+    console.log(event.target.title.value);
 
     const variable = {
-      name: event.target.name.value
+      title: event.target.title.value,
+      name: event.target.name.value,
+      lastValue: 0
     };
-    if (event.target.value.value !== '') {
-      variable.lastValue = Number(event.target.value.value);
-    }
 
     Meteor.call('variables.insert', variable);
-    
+
+    event.target.title.value = '';
     event.target.name.value = '';
-    event.target.value.value = '';
   }
 });

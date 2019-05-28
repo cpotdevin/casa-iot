@@ -1,7 +1,10 @@
 <template name="variable">
   <div class='variable'>
-    <h3>{{name}}</h3>
-    <h4>Last value: {{lastValue}}</h4>
+    <h3>{{title}}</h3>
+    <ul>
+      <li>Name: {{name}}</li>
+      <li>Last value: {{lastValue}}</li>
+    </ul>
     <form class='update-variable'>
       <label>Set value: </label>
       <input type="number" name="value" placeholder="Value" step="any" required="required" autocomplete="off" />
