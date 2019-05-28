@@ -53,7 +53,7 @@ Meteor.methods({
   'variables.update-value'(variableId, value) {
     check(variableId, String);
     check(value, Number);
-    const testVar = Variables.find({ _id: variableId, owner: this.userId }).fetch();
+    const testVar = Variables.find({ _id: variableId }).fetch();
     if (testVar.length === 0) {
       throw new Meteor.Error('variable-does-not-exist');
     }
