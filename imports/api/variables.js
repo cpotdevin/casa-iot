@@ -9,7 +9,7 @@ export const Variables = new Mongo.Collection('variables');
 if (Meteor.isServer) {
   Meteor.publish('variables', function variablesPublication() {
     if (!this.userId) {
-      return Variables.find({});
+      return Variables.find({}, {sort: {owner: -1}});
     } else {
       return Variables.find({ owner: this.userId });
     }
