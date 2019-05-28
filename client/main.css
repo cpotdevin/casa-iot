@@ -31,6 +31,12 @@ nav h1 {
   margin-right: 50px;
 }
 
+#login-dropdown-list {
+  position: relative;
+  float: right;
+  top: 100px;
+}
+
 #user-token {
   display: flex;
 }
